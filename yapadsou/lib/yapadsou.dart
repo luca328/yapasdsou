@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yapadsou/views/first_view.dart';
+import 'package:yapadsou/views/onboarding.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 
 class Yapasdsou extends StatelessWidget {
@@ -13,7 +13,7 @@ class Yapasdsou extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
       ),
-      home: Scaffold(body: FirstView()),
+      home: Scaffold(body: Onboarding()),
     );
   }
 }
