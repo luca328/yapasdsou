@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
-import 'package:yapadsou/views/onboarding.dart';
+import 'package:yapadsou/views/register.dart';
 
 class Yapasdsou extends StatelessWidget {
   const Yapasdsou({super.key});
@@ -11,9 +11,9 @@ class Yapasdsou extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue)
+        colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
       ),
-      home: Scaffold(body: Onboarding()),
+      home: const Scaffold(body: Register()),
     );
   }
 }
