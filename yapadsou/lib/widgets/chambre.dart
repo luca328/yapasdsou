@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 
-class chambreWidget extends StatelessWidget {
+class ChambreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

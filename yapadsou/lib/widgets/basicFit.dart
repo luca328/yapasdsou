@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 
-class otacosWidget extends StatelessWidget {
+class BasiFitWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
