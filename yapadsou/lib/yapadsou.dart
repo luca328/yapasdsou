@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yapadsou/views/first_view.dart';
+import 'package:yapadsou/views/onboarding.dart';
 
 class Yapasdsou extends StatelessWidget {
   const Yapasdsou({super.key});
