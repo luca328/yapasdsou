@@ -13,6 +13,6 @@ class Yapasdsou extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
         ),
-        home: const Scaffold(body: Register()));
+        home: const Scaffold(resizeToAvoidBottomInset: false, body: Register()));
   }
 }

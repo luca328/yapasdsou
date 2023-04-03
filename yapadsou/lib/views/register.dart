@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
+import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
 
 
@@ -27,27 +28,36 @@ class _RegisterState extends State<Register> {
           Form(
             key: _formKey,
             child: Container(
-              width: MediaQuery.of(context).size.width*0.8,
+              width: MediaQuery.of(context).size.width*0.9,
               color: CustomColors.brokenWhite,
               child: Column(
                 children: <Widget>[
                   const Inputs(
                     inputKey: "email",
                     inputText: "Ton adresse e-mail",
+                    obscured: false,
                   ),
                   const SizedBox(height: 10),
                   const Inputs(
                     inputKey: "password",
                     inputText: "Ton mot de passe",
+                    obscured: true,
                   ),
                   const SizedBox(height: 10),
                   const Inputs(
                     inputKey: "confirm",
                     inputText: "Confirme ton mot de passe",
+                    obscured: true,
                   ),
                   const SizedBox(height: 100),
-                  Text("En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou", style: CustomTextStyles.normalText(),),
-                  
+                  Text("En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou", style: CustomTextStyles.normalInterText(),),
+                  SimpleButton(text: "SE CONNECTER", pressed: () =>  {
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                        ),
+                    }
+                  }, color: CustomColors.blue),
                 ],
               ),
             ),
@@ -55,7 +65,7 @@ class _RegisterState extends State<Register> {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 30),
-            child: Text("Déjà un compte ? Connecte-toi !", style: CustomTextStyles.normalText(),),
+            child: Text("Déjà un compte ? Connecte-toi !", style: CustomTextStyles.normalInterText(),),
           )
         ],
       ),

@@ -5,10 +5,12 @@ class Inputs extends StatelessWidget {
     super.key,
     required this.inputKey,
     required this.inputText,
+    this.obscured = false,
   });
 
   final String inputKey;
   final String inputText;
+  final bool obscured;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class Inputs extends StatelessWidget {
         return null;
       },
       key: Key(inputKey),
-      obscureText: true,
+      obscureText: obscured,
       decoration: InputDecoration(
         border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15))),
