@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 
-class BasiFitWidget extends StatelessWidget {
+class BasicFitWidget extends StatelessWidget {
+  const BasicFitWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
