@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 
-class otacosWidget extends StatelessWidget {
+class OtacosWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
