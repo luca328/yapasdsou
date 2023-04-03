@@ -72,7 +72,7 @@ class _OnboardingState extends State<Onboarding> {
           const SizedBox(
             height: 45,
           ),
-          simpleButton(
+          SimpleButton(
             text: "C’est parti !",
             pressed: () => {DefaultTabController.of(context).animateTo(1)},
             color: CustomColors.pink,
