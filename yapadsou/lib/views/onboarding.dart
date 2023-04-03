@@ -2,6 +2,7 @@ import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
+import 'package:yapadsou/widgets/button.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -26,9 +27,6 @@ class _OnboardingState extends State<Onboarding> {
         child: Column(children: [
           Column(
             children: [
-              const SizedBox(
-                height: 50,
-              ),
               Text(
                 'PAS DE SOUS ?',
                 style: CustomTextStyles.title(color: CustomColors.brokenWhite),
@@ -40,7 +38,7 @@ class _OnboardingState extends State<Onboarding> {
             ],
           ),
           const SizedBox(
-            height: 80,
+            height: 50,
           ),
           CarouselIndicator(
             count: _widegts.length,
@@ -48,10 +46,10 @@ class _OnboardingState extends State<Onboarding> {
             width: 30,
           ),
           const SizedBox(
-            height: 45,
+            height: 40,
           ),
           Container(
-            height: 300,
+            height: 250,
             width: double.infinity,
             child: PageView(
               children: _widegts,
@@ -63,7 +61,7 @@ class _OnboardingState extends State<Onboarding> {
             ),
           ),
           const SizedBox(
-            height: 45,
+            height: 20,
           ),
           Text(
             'Accède aux 500 bons plans \n qu’on te propose chaque mois',
@@ -71,6 +69,14 @@ class _OnboardingState extends State<Onboarding> {
                 color: CustomColors.brokenWhite),
             textAlign: TextAlign.center,
           ),
+          const SizedBox(
+            height: 45,
+          ),
+          simpleButton(
+            text: "C’est parti !",
+            pressed: () => {DefaultTabController.of(context).animateTo(1)},
+            color: CustomColors.pink,
+          )
         ]));
   }
 }
