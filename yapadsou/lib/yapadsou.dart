@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/views/first_view.dart';
+import 'package:yapadsou/assets/colors/colors.dart';
 
 class Yapasdsou extends StatelessWidget {
   const Yapasdsou({super.key});
@@ -10,7 +11,7 @@ class Yapasdsou extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
       ),
       home: Scaffold(body: FirstView()),
     );
