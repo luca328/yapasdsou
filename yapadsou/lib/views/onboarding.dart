@@ -2,10 +2,8 @@ import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
-import 'package:yapadsou/views/register.dart';
+import 'package:yapadsou/views/registerview.dart';
 import 'package:yapadsou/widgets/button.dart';
-import 'package:yapadsou/widgets/basic_Fit.dart';
-import 'package:yapadsou/widgets/barathon.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -17,8 +15,7 @@ class _OnboardingState extends State<Onboarding> {
   int pageIndex = 0;
 
   final List<Widget> _widegts = [
-    BasicFitWidget(),
-    BarathonWidget(),
+    //widget_card
     Container(height: 300, color: CustomColors.lightBlue),
   ];
   @override

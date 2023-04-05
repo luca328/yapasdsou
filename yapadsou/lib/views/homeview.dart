@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:yapadsou/views/register.dart';
+import 'package:yapadsou/views/registerview.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/widgets/button.dart';
-import 'package:yapadsou/widgets/basic_Fit.dart';
-import 'package:yapadsou/widgets/barathon.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
