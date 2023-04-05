@@ -22,6 +22,6 @@ class Yapasdsou extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
         ),
         home: const Scaffold(
-            resizeToAvoidBottomInset: false, body: Center(child: HomeView())));
+            resizeToAvoidBottomInset: false, body: Center(child: MainView())));
   } //WidgetCard(title: "test titre", subTitle: "test sous titre", brandImage: CustomImages.sport, logo: CustomImages.basicFit)
 }
