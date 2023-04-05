@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:yapadsou/assets/images/image.dart';
 
-class ChambreWidget extends StatelessWidget {
-  const ChambreWidget({super.key});
+class WidgetCard extends StatelessWidget {
+  final String title;
+  final String sub_title;
+  final String brand_image;
+  final String logo;
+
+  const WidgetCard({
+    super.key,
+    required this.brand_image,
+    required this.logo,
+    required this.sub_title,
+    required this.title,
+  });
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,) {
     return Container(
       width: 159,
       height: 162,
@@ -27,22 +38,22 @@ class ChambreWidget extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  CustomImages.chambre,
+                  brand_image,
                   width: 144,
                   height: 90,
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                  'Garantie appart',
-                  style: TextStyle(
+                Text(
+                  title,
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 5),
-                const Text(
-                  'Pas besoin de garants',
-                  style: TextStyle(
+                Text(
+                  sub_title,
+                  style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
                   ),
@@ -62,7 +73,7 @@ class ChambreWidget extends StatelessWidget {
               ),
               child: Center(
                 child: Image.asset(
-                  CustomImages.biliJeu,
+                  logo,
                   width: 30,
                   height: 30,
                 ),
