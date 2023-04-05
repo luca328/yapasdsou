@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yapadsou/assets/colors/colors.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -12,13 +13,13 @@ class MainView extends StatelessWidget {
           child: TabBar(
             tabs: <Widget>[
               Tab(
-                icon: Icon(Icons.home)
+                icon: Icon(Icons.home, color: CustomColors.blue,)
               ),
               Tab(
-                icon: Icon(Icons.add)
+                icon: Icon(Icons.add_circle, color: CustomColors.blue,)
               ),
               Tab(
-                icon: Icon(Icons.person)
+                icon: Icon(Icons.account_circle, color: CustomColors.blue,)
               )
             ]
           ),
