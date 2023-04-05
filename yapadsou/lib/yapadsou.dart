@@ -10,8 +10,8 @@ class Yapasdsou extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
     ]);
     return MaterialApp(
         title: 'Flutter Demo',
@@ -20,7 +20,6 @@ class Yapasdsou extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
         ),
         home: const Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: Center(child: Onboarding())));
+            resizeToAvoidBottomInset: false, body: Center(child: HomeView())));
   } //WidgetCard(title: "test titre", subTitle: "test sous titre", brandImage: CustomImages.sport, logo: CustomImages.basicFit)
 }

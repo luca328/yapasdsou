@@ -15,34 +15,50 @@ class _HomeViewState extends State<HomeView> {
     return Container(
         alignment: Alignment.centerLeft,
         color: CustomColors.blue,
-        padding: const EdgeInsets.all(30),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Column(
                 children: [
-                  Text(
-                    'COUCOU TOI',
-                    style:
-                        CustomTextStyles.title(color: CustomColors.brokenWhite),
-                    textAlign: TextAlign.left,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30, top: 30),
+                    child: Text(
+                      'COUCOU TOI',
+                      style: CustomTextStyles.title(
+                          color: CustomColors.brokenWhite),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
-                  Text(
-                    'T\'es en manque de thunes ?',
-                    style: CustomTextStyles.normalInterText(
-                        color: CustomColors.brokenWhite),
-                    textAlign: TextAlign.left,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Text(
+                      'T\'es en manque de thunes ?',
+                      style: CustomTextStyles.normalInterText(
+                          color: CustomColors.brokenWhite),
+                      textAlign: TextAlign.left,
+                    ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 35,
+              const Padding(
+                padding: EdgeInsets.all(30),
+                child: SearchBar(
+                  inputKey: "searchBar",
+                  inputText: "Cherche ton bon plan",
+                ),
               ),
-              const SearchBar(
-                inputKey: "searchBar",
-                inputText: "Cherche ton bon plan",
-              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  decoration: const BoxDecoration(
+                      color: CustomColors.brokenWhite,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30.0),
+                          topRight: Radius.circular(30.0))),
+                ),
+              )
             ]));
   }
 }
