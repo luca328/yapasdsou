@@ -6,13 +6,13 @@ class WidgetCard extends StatelessWidget {
   final String brandImage;
   final String logo;
 
-  const WidgetCard({
-    Key? key,
+const WidgetCard({
+    super.key,
     required this.brandImage,
     required this.logo,
     required this.subTitle,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
