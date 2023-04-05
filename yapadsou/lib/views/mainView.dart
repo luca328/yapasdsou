@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class MainView extends StatelessWidget {
   const MainView({super.key});
   @override
@@ -25,13 +23,13 @@ class MainView extends StatelessWidget {
             ]
           ),
         ),
-        body: TabBarView(
-          children: <Widget>[
-            Home(),
-            AddPlan(),
-            Profil(),
-          ]
-        ),
+        // body: TabBarView(
+        //   children: <Widget>[
+        //     Home(),
+        //     AddPlan(),
+        //     Profil(),
+        //   ]
+        // ),
       )
     );
   }

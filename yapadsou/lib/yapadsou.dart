@@ -16,6 +16,6 @@ class Yapasdsou extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: CustomColors.blue),
         ),
-        home: Scaffold(resizeToAvoidBottomInset: false, body: Center(child: WidgetCard(title: "test titre", subTitle: "test sous titre", brandImage: CustomImages.sport, logo: CustomImages.basicFit))));
-  }
+        home: const Scaffold(resizeToAvoidBottomInset: false, body: Center(child: Onboarding())));
+  } //WidgetCard(title: "test titre", subTitle: "test sous titre", brandImage: CustomImages.sport, logo: CustomImages.basicFit)
 }
