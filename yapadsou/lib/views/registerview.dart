@@ -38,7 +38,8 @@ class _RegisterState extends State<Register> {
           Text("BIENVENUE 😎", style: CustomTextStyles.title(color: CustomColors.black)),
           Text("Inscris toi pour avoir les\nmeilleurs plans étudiants!", textAlign: TextAlign.center, style: CustomTextStyles.normalText(color: CustomColors.black)),
           const SizedBox(height: 50),
-          Form(
+          Material(
+            child: Form(
             key: _formKey,
             child: Container(
               width: MediaQuery.of(context).size.width*0.9,
@@ -92,6 +93,7 @@ class _RegisterState extends State<Register> {
                 ],
               ),
             ),
+          ),
           ),
           const Spacer(),
           Padding(
