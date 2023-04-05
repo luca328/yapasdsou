@@ -13,7 +13,7 @@ class Onboarding extends StatefulWidget {
 class _OnboardingState extends State<Onboarding> {
   int pageIndex = 0;
 
-  List<Widget> _widegts = [
+  final List<Widget> _widegts = [
     Container(height: 300, color: CustomColors.gold),
     Container(height: 300, color: CustomColors.grey),
     Container(height: 300, color: CustomColors.lightBlue),
