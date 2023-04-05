@@ -12,6 +12,19 @@ class Register extends StatefulWidget {
 }
 class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    emailController.dispose();
+    passwordController.dispose();
+    confirmController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,30 +45,48 @@ class _RegisterState extends State<Register> {
               color: CustomColors.brokenWhite,
               child: Column(
                 children: <Widget>[
-                  const Inputs(
+                  Inputs(
+                    controller: emailController,
                     inputKey: "email",
                     inputText: "Ton adresse e-mail",
                     obscured: false,
+                    passwordController: TextEditingController(text: ""),
                   ),
                   const SizedBox(height: 10),
-                  const Inputs(
+                  Inputs(
+                    controller: passwordController,
                     inputKey: "password",
                     inputText: "Ton mot de passe",
                     obscured: true,
+                    passwordController: TextEditingController(text: ""),
                   ),
                   const SizedBox(height: 10),
-                  const Inputs(
+                  Inputs(
+                    controller: confirmController,
                     inputKey: "confirm",
                     inputText: "Confirme ton mot de passe",
                     obscured: true,
+                    passwordController: passwordController,
                   ),
                   const SizedBox(height: 100),
                   Text("En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou", style: CustomTextStyles.normalInterText(),),
                   SimpleButton(text: "SE CONNECTER", pressed: () =>  {
                     if (_formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Processing Data')),
-                        ),
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            content: Row(children: [
+                              Text(emailController.text),
+                              const Text(" - "),
+                              Text(passwordController.text),
+                              const Text(" - "),
+                              Text(confirmController.text),
+                            ]
+                            )
+                            );
+                          },
+                      )
                     }
                   }, color: CustomColors.blue),
                 ],
