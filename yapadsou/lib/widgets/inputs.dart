@@ -44,7 +44,7 @@ class _InputsState extends State<Inputs> {
           }
         }
         if(widget.inputKey == 'password' && value.isNotEmpty){
-          RegExp exp = RegExp(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$");
+          RegExp exp = RegExp(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~?'\-_><]).{8,}$");
           if(!exp.hasMatch(value)){
             return 'Le mot de passe doit contenir: un chiffre\nune majuscule et minuscule, un caractère spécial\net faire plus de 8 caractères';
           }
