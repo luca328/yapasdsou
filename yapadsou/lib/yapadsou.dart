@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/assets/images/image.dart';
 import 'package:yapadsou/views/onboarding.dart';
-import 'package:yapadsou/widgets/widget_cardview.dart';
+import 'package:yapadsou/widgets/widget_card.dart';
 
 class Yapasdsou extends StatelessWidget {
   const Yapasdsou({super.key});
