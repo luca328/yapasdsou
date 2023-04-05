@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
-import 'package:yapadsou/views/onboarding.dart';
-import 'package:yapadsou/views/onboarding.dart';
 import 'package:yapadsou/views/homeview.dart';
 
 class Yapasdsou extends StatelessWidget {
