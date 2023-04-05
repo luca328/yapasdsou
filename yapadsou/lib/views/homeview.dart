@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:yapadsou/views/registerview.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/widgets/searchbar.dart';
-import 'package:yapadsou/widgets/button.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

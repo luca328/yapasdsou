@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/views/loginview.dart';
+import 'package:yapadsou/views/mainView.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
 
@@ -75,7 +76,7 @@ class _RegisterState extends State<Register> {
                   Text("En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou", style: CustomTextStyles.normalInterText(),),
                   SimpleButton(text: "SE CONNECTER", pressed: () =>  {
                     if (_formKey.currentState!.validate()) {
-                      showDialog(
+                      /*showDialog(
                         context: context,
                         builder: (context) {
                           return AlertDialog(
@@ -87,10 +88,14 @@ class _RegisterState extends State<Register> {
                               Text(confirmController.text),
                             ]
                             )
-                            );
-                          },
-                      )
-                    }
+                          );
+                        },
+                      ),*/
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MainView()),
+                      ),
+                    },
                   }, color: CustomColors.blue),
                 ],
               ),

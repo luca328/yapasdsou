@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
+import 'package:yapadsou/views/homeview.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -24,13 +25,15 @@ class MainView extends StatelessWidget {
             ]
           ),
         ),
-        // body: TabBarView(
-        //   children: <Widget>[
-        //     Home(),
+        body: TabBarView(
+          children: <Widget>[
+            HomeView(),
+            Text("test"),
+            Text("test"),
         //     AddPlan(),
         //     Profil(),
-        //   ]
-        // ),
+          ]
+        ),
       )
     );
   }
