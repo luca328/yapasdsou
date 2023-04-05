@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class WidgetCard extends StatelessWidget {
   final String title;
-  final String sub_title;
-  final String brand_image;
+  final String subTitle;
+  final String brandImage;
   final String logo;
 
   const WidgetCard({
     super.key,
-    required this.brand_image,
+    required this.brandImage,
     required this.logo,
-    required this.sub_title,
+    required this.subTitle,
     required this.title,
   });
 
@@ -38,7 +38,7 @@ class WidgetCard extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  brand_image,
+                  brandImage,
                   width: 144,
                   height: 90,
                 ),
@@ -52,7 +52,7 @@ class WidgetCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 5),
                 Text(
-                  sub_title,
+                  subTitle,
                   style: const TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
@@ -80,14 +80,6 @@ class WidgetCard extends StatelessWidget {
               ),
             )
           )
-
-          /*
-            child: Image.asset(
-              CustomImages.otacos,
-              width: 30,
-              height: 30,
-            ),
-          ),*/
         ],
       ),
     );
