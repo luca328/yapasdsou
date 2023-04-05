@@ -61,7 +61,6 @@ class _OnboardingState extends State<Onboarding> {
             'Accède aux 500 bons plans \n qu’on te propose chaque mois',
             style: CustomTextStyles.normalInterText(
                 color: CustomColors.brokenWhite),
-            textAlign: TextAlign.center,
           ),
           const Spacer(),
           SimpleButton(
