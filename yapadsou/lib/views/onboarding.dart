@@ -44,7 +44,7 @@ class _OnboardingState extends State<Onboarding> {
             width: 30,
           ),
           const Spacer(),
-          Container(
+          SizedBox(
             height: 250,
             width: double.infinity,
             child: PageView(

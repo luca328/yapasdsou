@@ -19,11 +19,11 @@ class SimpleButton extends StatelessWidget {
         height: 56,
         child: ElevatedButton(
             onPressed: pressed,
-            child: Text(text),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(color),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12))))),
+                    borderRadius: BorderRadius.circular(12)))),
+            child:  Text(text),),
       ),
     ]));
   }
