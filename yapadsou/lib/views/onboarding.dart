@@ -1,9 +1,11 @@
 import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
+import 'package:yapadsou/assets/images/image.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/views/registerview.dart';
 import 'package:yapadsou/widgets/button.dart';
+import 'package:yapadsou/widgets/widget_card.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -16,7 +18,46 @@ class _OnboardingState extends State<Onboarding> {
 
   final List<Widget> _widegts = [
     //widget_card
-    Container(height: 300, color: CustomColors.lightBlue),
+    Container(
+        height: 300,
+        decoration: const BoxDecoration(
+            color: CustomColors.brokenWhite,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30.0),
+                topRight: Radius.circular(30.0),
+                bottomLeft: Radius.circular(30.0),
+                bottomRight: Radius.circular(30.0))),
+        child: Column(children: [
+          Wrap(
+            alignment: WrapAlignment.spaceEvenly,
+            runAlignment: WrapAlignment.spaceEvenly,
+            runSpacing: 5,
+            spacing: 10,
+            children: [
+              WidgetCard(
+                  brandImage: CustomImages.sport,
+                  logo: CustomImages.basicFit,
+                  subTitle: "2 mois offerts",
+                  title: "Abonnement 1 an"),
+              WidgetCard(
+                  brandImage: CustomImages.bar,
+                  logo: CustomImages.barathon,
+                  subTitle: "1 verre acheté = 1 offert",
+                  title: "Le grand Barathon"),
+              WidgetCard(
+                  brandImage: CustomImages.chambre,
+                  logo: CustomImages.biliJeu,
+                  subTitle: "Pas besoin de garants",
+                  title: "Garantie appart"),
+              WidgetCard(
+                  brandImage: CustomImages.tacos,
+                  logo: CustomImages.otacos,
+                  subTitle: "5€99, dépêche toi !",
+                  title: "Giga MAXI Tacos"),
+            ],
+          ),
+        ]))
   ];
   @override
   Widget build(BuildContext context) {
@@ -58,7 +99,7 @@ class _OnboardingState extends State<Onboarding> {
           ),
           const Spacer(),
           Text(
-            'Accède aux 500 bons plans \n qu’on te propose chaque mois',
+            'Accède aux 500 bons plans\nqu’on te propose chaque mois',
             style: CustomTextStyles.normalInterText(
                 color: CustomColors.brokenWhite),
           ),
