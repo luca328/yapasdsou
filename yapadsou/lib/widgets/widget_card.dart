@@ -5,6 +5,8 @@ class WidgetCard extends StatelessWidget {
   final String subTitle;
   final String brandImage;
   final String logo;
+  final double height;
+  final double width;
 
   const WidgetCard({
     super.key,
@@ -12,13 +14,15 @@ class WidgetCard extends StatelessWidget {
     required this.logo,
     required this.subTitle,
     required this.title,
+    required this.width,
+    required this.height,
   });
 
   @override
   Widget build(BuildContext context,) {
     return Container(
-      width: 159,
-      height: 162,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
