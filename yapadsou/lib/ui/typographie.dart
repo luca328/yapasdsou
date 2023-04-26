@@ -12,6 +12,16 @@ class CustomTextStyles {
     );
   }
 
+  static TextStyle titleSmall({Color color = CustomColors.lightGrey}) {
+    return TextStyle(
+      color: color,
+      fontWeight: FontWeight.bold,
+      fontFamily: "IntegralCF",
+      fontSize: 25,
+      decoration: TextDecoration.none,
+    );
+  }
+
   static TextStyle subtitle({Color color = CustomColors.lightGrey}) {
     return TextStyle(
       color: color,
@@ -27,6 +37,26 @@ class CustomTextStyles {
       color: color,
       fontWeight: FontWeight.normal,
       fontFamily: "inter",
+      fontSize: 16,
+      decoration: TextDecoration.none,
+    );
+  }
+
+  static TextStyle normalBoldInterText({Color color = CustomColors.lightGrey}) {
+    return TextStyle(
+      color: color,
+      fontWeight: FontWeight.bold,
+      fontFamily: "inter",
+      fontSize: 16,
+      decoration: TextDecoration.none,
+    );
+  }
+
+  static TextStyle normalBoldText({Color color = CustomColors.lightGrey}) {
+    return TextStyle(
+      color: color,
+      fontWeight: FontWeight.bold,
+      fontFamily: "IntegralCF",
       fontSize: 16,
       decoration: TextDecoration.none,
     );

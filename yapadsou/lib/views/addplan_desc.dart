@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
-import 'package:yapadsou/views/mainView.dart';
+import 'package:yapadsou/views/planview.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
 
@@ -18,6 +16,8 @@ class AddPlanDescView extends StatefulWidget {
 class _AddPlanDescViewState extends State<AddPlanDescView> {
   int pageIndex = 0;
   final titreController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final lienController = TextEditingController();
   final pageController = PageController();
   late List<Widget> _widgets = [];
 
@@ -53,7 +53,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 Inputs(
                   nbLines: 4,
                   validate: false,
-                  controller: titreController,
+                  controller: descriptionController,
                   inputKey: "titre",
                   inputText: "Abonnement 1 an Basic-Fit",
                   obscured: false,
@@ -69,7 +69,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 Text("LIEN", style: CustomTextStyles.subtitle(color: Colors.black),),
                 Inputs(
                   validate: false,
-                  controller: titreController,
+                  controller: lienController,
                   inputKey: "titre",
                   inputText: "Abonnement 1 an Basic-Fit",
                   obscured: false,
@@ -98,7 +98,16 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
               child: const Center(child: Icon(Icons.add, color: Colors.white, size: 80))
             ),
             const Spacer(),
-            SimpleButton(text: "AJOUTER CE BON PLAN", pressed: ()=> pageController.animateToPage(1, duration: const Duration(seconds: 1), curve: Curves.ease), color: CustomColors.blue),
+            SimpleButton(
+              text: "AJOUTER CE BON PLAN",
+              pressed: ()=> { Navigator.push(context, MaterialPageRoute(builder: (context) => PlanView(
+              titre: titreController.text,
+              description: descriptionController.text,
+              lien: lienController.text,
+              rating: 4,
+              )))},
+              color: CustomColors.blue
+            ),
           ],
         ),
       )
@@ -152,41 +161,52 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 padding: EdgeInsets.all(30),
               ),
               Expanded(
-                  child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: const BoxDecoration(
-                          color: CustomColors.brokenWhite,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30.0),
-                              topRight: Radius.circular(30.0))),
-                      child: Column(
-                        children: [
-                          const Spacer(),
-                          CarouselIndicator(
-                            count: _widgets.length,
-                            index: pageIndex,
-                            width: 30,
-                            color: Colors.grey,
-                            activeColor: CustomColors.blue,
-                          ),
-                          const Spacer(),
-                          SizedBox(
-                            height: 500,
-                            width: MediaQuery.of(context).size.width * 0.8,
-                            child: PageView(
-                              controller: pageController,
-                              children: _widgets,
-                              onPageChanged: (index) {
-                                setState(() {
-                                  pageIndex = index;
-                                });
-                              },
-                            ),
-                          ),
-                          const Spacer()
-                        ],
-                      )))
-            ]));
+                  child: CustomScrollView(
+                    slivers: [
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: const BoxDecoration(
+                              color: CustomColors.brokenWhite,
+                              shape: BoxShape.rectangle,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30.0),
+                                  topRight: Radius.circular(30.0))),
+                            child: Column(
+                              children: [
+                                const Spacer(),
+                                CarouselIndicator(
+                                  count: _widgets.length,
+                                  index: pageIndex,
+                                  width: 30,
+                                  color: Colors.grey,
+                                  activeColor: CustomColors.blue,
+                                ),
+                                const Spacer(),
+                                SizedBox(
+                                  height: 500,
+                                  width: MediaQuery.of(context).size.width * 0.8,
+                                  child: PageView(
+                                    controller: pageController,
+                                    children: _widgets,
+                                    onPageChanged: (index) {
+                                      setState(() {
+                                        pageIndex = index;
+                                      });
+                                    },
+                                  ),
+                                ),
+                            const Spacer()
+                          ],
+                        )
+                      ),
+                    )
+                  ],
+                )
+              )
+          ]
+      ),
+    );
   }
 }
