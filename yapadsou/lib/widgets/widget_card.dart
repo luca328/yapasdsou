@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yapadsou/assets/colors/colors.dart';
 
 class WidgetCard extends StatelessWidget {
   final String title;
@@ -23,21 +24,15 @@ class WidgetCard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context,) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        color: CustomColors.brokenWhite,
       ),
       child: Stack(
         children: [
@@ -50,20 +45,19 @@ class WidgetCard extends StatelessWidget {
                   width: 144,
                   height: 90,
                 ),
-                const SizedBox(height: 10),
                 Text(
                   title,
                   style: TextStyle(
                     fontSize: titleSize,
                     fontWeight: FontWeight.bold,
+                    color: CustomColors.black,
                   ),
                 ),
-                const SizedBox(height: 5),
                 Text(
                   subTitle,
                   style: TextStyle(
                     fontSize: subTitleSize,
-                    color: Colors.grey,
+                    color: CustomColors.black,
                   ),
                 ),
                 const Spacer(),
@@ -71,23 +65,22 @@ class WidgetCard extends StatelessWidget {
             ),
           ),
           Transform.translate(
-            offset: const Offset(65, 68),
-            child : Container(
-              width: 36,
-              height: 36,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Center( 
-                child: Image.asset(
-                  logo,
-                  width: 30,
-                  height: 30,
+              offset: const Offset(65, 68),
+              child: Container(
+                width: 36,
+                height: 36,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
                 ),
-              ),
-            )
-          )
+                child: Center(
+                  child: Image.asset(
+                    logo,
+                    width: 30,
+                    height: 30,
+                  ),
+                ),
+              ))
         ],
       ),
     );
