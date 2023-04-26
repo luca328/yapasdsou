@@ -7,4 +7,5 @@ class CustomImages {
   static String chambre = "lib/assets/images/chambre.png";
   static String otacos = "lib/assets/images/otacos.png";
   static String sport = "lib/assets/images/sport.png";
+  static String profilePicture = "lib/assets/images/profile_picture.png";
 }
