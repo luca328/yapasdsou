@@ -5,6 +5,7 @@ import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/views/planview.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
+import 'package:yapadsou/widgets/simple_icon_button.dart';
 
 class AddPlanDescView extends StatefulWidget {
   const AddPlanDescView({super.key});
@@ -91,12 +92,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
             const SizedBox(height: 30,),
             Text("PHOTO DU BON PLAN", style: CustomTextStyles.subtitle(color: Colors.black),),
             const SizedBox(height: 30),
-            Container(
-              width: 200,
-              height: 200,
-              decoration: BoxDecoration(color: CustomColors.blue, borderRadius: BorderRadius.circular(30.0),),
-              child: const Center(child: Icon(Icons.add, color: Colors.white, size: 80))
-            ),
+            SimpleIconButton(width: 200, height: 200, iconSize: 80, icon: Icons.add, color: CustomColors.blue, borderRadius: BorderRadius.circular(30.0),),
             const Spacer(),
             SimpleButton(
               text: "AJOUTER CE BON PLAN",
