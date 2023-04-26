@@ -42,6 +42,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Abonnement 1 an",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.bar,
@@ -50,6 +52,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Le grand Barathon",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.chambre,
@@ -58,6 +62,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Garantie appart",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.tacos,
@@ -66,6 +72,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Giga MAXI Tacos",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
             ],
           ),
@@ -94,6 +102,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Abonnement 1 an",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.bar,
@@ -102,6 +112,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Le grand Barathon",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.chambre,
@@ -110,6 +122,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Garantie appart",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.tacos,
@@ -118,6 +132,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Giga MAXI Tacos",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
             ],
           ),
@@ -146,6 +162,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Abonnement 1 an",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.bar,
@@ -154,6 +172,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Le grand Barathon",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.chambre,
@@ -162,6 +182,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Garantie appart",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
               WidgetCard(
                 brandImage: CustomImages.tacos,
@@ -170,6 +192,8 @@ class _OnboardingState extends State<Onboarding> {
                 title: "Giga MAXI Tacos",
                 width: 104.03,
                 height: 105.99,
+                titleSize: 12,
+                subTitleSize: 6.54,
               ),
             ],
           ),

@@ -87,6 +87,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Abonnement 1 an",
                               width: 159,
                               height: 162,
+                              titleSize: 14,
+                              subTitleSize: 10,
                             ),
                             WidgetCard(
                               brandImage: CustomImages.bar,
@@ -95,6 +97,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Le grand Barathon",
                               width: 159,
                               height: 162,
+                              titleSize: 12,
+                              subTitleSize: 10,
                             ),
                             WidgetCard(
                               brandImage: CustomImages.chambre,
@@ -103,6 +107,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Garantie appart",
                               width: 159,
                               height: 162,
+                              titleSize: 12,
+                              subTitleSize: 10,
                             ),
                             WidgetCard(
                               brandImage: CustomImages.tacos,
@@ -111,6 +117,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Giga MAXI Tacos",
                               width: 159,
                               height: 162,
+                              titleSize: 12,
+                              subTitleSize: 10,
                             ),
                             WidgetCard(
                               brandImage: CustomImages.sport,
@@ -119,6 +127,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Abonnement 1 an",
                               width: 159,
                               height: 162,
+                              titleSize: 12,
+                              subTitleSize: 10,
                             ),
                             WidgetCard(
                               brandImage: CustomImages.sport,
@@ -127,6 +137,8 @@ class _HomeViewState extends State<HomeView> {
                               title: "Abonnement 1 an",
                               width: 159,
                               height: 162,
+                              titleSize: 12,
+                              subTitleSize: 10,
                             ),
                           ],
                         ),
