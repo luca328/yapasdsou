@@ -7,6 +7,8 @@ class WidgetCard extends StatelessWidget {
   final String logo;
   final double height;
   final double width;
+  final double titleSize;
+  final double subTitleSize;
 
   const WidgetCard({
     super.key,
@@ -16,6 +18,8 @@ class WidgetCard extends StatelessWidget {
     required this.title,
     required this.width,
     required this.height,
+    required this.titleSize,
+    required this.subTitleSize,
   });
 
   @override
@@ -49,16 +53,16 @@ class WidgetCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   title,
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: titleSize,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   subTitle,
-                  style: const TextStyle(
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontSize: subTitleSize,
                     color: Colors.grey,
                   ),
                 ),
