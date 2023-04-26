@@ -53,7 +53,7 @@ class WidgetCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: titleSize,
                     fontWeight: FontWeight.bold,
                   ),
@@ -61,7 +61,7 @@ class WidgetCard extends StatelessWidget {
                 const SizedBox(height: 5),
                 Text(
                   subTitle,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: subTitleSize,
                     color: Colors.grey,
                   ),
