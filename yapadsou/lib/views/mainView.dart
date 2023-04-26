@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/views/homeview.dart';
+import 'package:yapadsou/views/addplan_desc.dart';
 
 
 class MainView extends StatelessWidget {
@@ -32,9 +33,7 @@ class MainView extends StatelessWidget {
           ),
           body: TabBarView(children: <Widget>[
             HomeView(),
-            // AddPlan(),
-            // Profil(),
-            Text("test"),
+            AddPlanDescView(),
             Text("test"),
           ]),
         ));

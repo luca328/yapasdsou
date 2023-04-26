@@ -12,6 +12,16 @@ class CustomTextStyles {
     );
   }
 
+  static TextStyle subtitle({Color color = CustomColors.lightGrey}) {
+    return TextStyle(
+      color: color,
+      fontWeight: FontWeight.bold,
+      fontFamily: "IntegralCF",
+      fontSize: 20,
+      decoration: TextDecoration.none,
+    );
+  }
+
   static TextStyle normalInterText({Color color = CustomColors.lightGrey}) {
     return TextStyle(
       color: color,
