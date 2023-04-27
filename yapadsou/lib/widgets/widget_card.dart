@@ -45,6 +45,9 @@ class WidgetCard extends StatelessWidget {
                   width: 144,
                   height: 90,
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Text(
                   title,
                   style: TextStyle(
