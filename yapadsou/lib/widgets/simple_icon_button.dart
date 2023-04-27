@@ -6,6 +6,8 @@ class SimpleIconButton extends StatelessWidget {
   final double width;
   final double height;
   final Color color;
+  final Color iconColor;
+  final void Function() pressed;
   final double iconSize;
   final BorderRadius? borderRadius;
 
@@ -14,6 +16,8 @@ class SimpleIconButton extends StatelessWidget {
     required this.height,
     required this.icon,
     required this.iconSize,
+    required this.pressed,
+    this.iconColor = Colors.white,
     this.color = CustomColors.blue,
     this.borderRadius,
     super.key,
@@ -31,7 +35,7 @@ class SimpleIconButton extends StatelessWidget {
         child: Center(
           child: Icon(
             icon,
-            color: Colors.white,
+            color: iconColor,
             size: iconSize,
           ),
         ));
