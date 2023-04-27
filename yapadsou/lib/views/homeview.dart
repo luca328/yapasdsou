@@ -4,6 +4,7 @@ import 'package:yapadsou/views/registerview.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/widgets/searchbar.dart';
+import 'package:yapadsou/widgets/simple_icon_button.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/widget_card.dart';
 
@@ -65,6 +66,82 @@ class _HomeViewState extends State<HomeView> {
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              children: [
+                                SimpleIconButton(
+                                    width: 57,
+                                    height: 57,
+                                    borderRadius: BorderRadius.circular(10),
+                                    icon: Icons.shopping_bag_outlined,
+                                    iconSize: 24),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text("courses",
+                                    style: CustomTextStyles.normalBoldText(
+                                        color: CustomColors.blue))
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SimpleIconButton(
+                                    width: 57,
+                                    height: 57,
+                                    color: CustomColors.red,
+                                    borderRadius: BorderRadius.circular(10),
+                                    icon: Icons.directions_run_outlined,
+                                    iconSize: 24),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text("sport",
+                                    style: CustomTextStyles.normalBoldText(
+                                        color: CustomColors.red))
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SimpleIconButton(
+                                    width: 57,
+                                    height: 57,
+                                    color: CustomColors.lightBlue,
+                                    borderRadius: BorderRadius.circular(10),
+                                    icon: Icons.train,
+                                    iconSize: 24),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text("trains",
+                                    style: CustomTextStyles.normalBoldText(
+                                        color: CustomColors.lightBlue))
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                SimpleIconButton(
+                                    width: 57,
+                                    height: 57,
+                                    color: CustomColors.washedBlue,
+                                    borderRadius: BorderRadius.circular(10),
+                                    icon: Icons.celebration_outlined,
+                                    iconSize: 24),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text("soirées",
+                                    style: CustomTextStyles.normalBoldText(
+                                        color: CustomColors.washedBlue))
+                              ],
+                            )
+                          ],
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Text(

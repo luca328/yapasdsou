@@ -23,34 +23,46 @@ class AddplanPhotoView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 60),
-                  child: Text(
-                    'MON PROFIL',
-                    style:
-                        CustomTextStyles.title(color: CustomColors.brokenWhite),
-                    textAlign: TextAlign.left,
-                  ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10, top: 60),
+                      child: Text(
+                        'MON PROFIL',
+                        style: CustomTextStyles.title(
+                            color: CustomColors.brokenWhite),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30, top: 10),
+                      child: Wrap(direction: Axis.vertical, children: [
+                        Text(
+                          'Modifie tes infos affichées aux',
+                          style: CustomTextStyles.normalInterText(
+                              color: CustomColors.brokenWhite),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          'autres sur l\'app',
+                          style: CustomTextStyles.normalInterText(
+                              color: CustomColors.brokenWhite),
+                          textAlign: TextAlign.left,
+                        ),
+                      ]),
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, top: 10),
-                  child: Wrap(direction: Axis.vertical, children: [
-                    Text(
-                      'Modifie tes infos affichées aux',
-                      style: CustomTextStyles.normalInterText(
-                          color: CustomColors.brokenWhite),
-                      textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      'autres sur l\'app',
-                      style: CustomTextStyles.normalInterText(
-                          color: CustomColors.brokenWhite),
-                      textAlign: TextAlign.left,
-                    ),
-                  ]),
-                )
+                SimpleIconButton(
+                    width: 44,
+                    height: 44,
+                    color: CustomColors.brokenWhite,
+                    borderRadius: BorderRadius.circular(30),
+                    icon: Icons.add,
+                    iconSize: 16),
               ],
             ),
             const Padding(
