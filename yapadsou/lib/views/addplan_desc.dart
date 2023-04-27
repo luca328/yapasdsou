@@ -55,7 +55,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                   nbLines: 4,
                   validate: false,
                   controller: descriptionController,
-                  inputKey: "titre",
+                  inputKey: "description",
                   inputText: "Abonnement 1 an Basic-Fit",
                   obscured: false,
                   passwordController: TextEditingController(text: ""),
@@ -71,7 +71,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 Inputs(
                   validate: false,
                   controller: lienController,
-                  inputKey: "titre",
+                  inputKey: "lien",
                   inputText: "Abonnement 1 an Basic-Fit",
                   obscured: false,
                   passwordController: TextEditingController(text: ""),
@@ -92,7 +92,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
             const SizedBox(height: 30,),
             Text("PHOTO DU BON PLAN", style: CustomTextStyles.subtitle(color: Colors.black),),
             const SizedBox(height: 30),
-            SimpleIconButton(width: 200, height: 200, iconSize: 80, icon: Icons.add, color: CustomColors.blue, borderRadius: BorderRadius.circular(30.0),),
+            SimpleIconButton(width: 200, height: 200, iconSize: 80, icon: Icons.add, color: CustomColors.blue, borderRadius: BorderRadius.circular(30.0), pressed: () => {},),
             const Spacer(),
             SimpleButton(
               text: "AJOUTER CE BON PLAN",
@@ -100,7 +100,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
               titre: titreController.text,
               description: descriptionController.text,
               lien: lienController.text,
-              rating: 4,
+              rating: 2,
               )))},
               color: CustomColors.blue
             ),
