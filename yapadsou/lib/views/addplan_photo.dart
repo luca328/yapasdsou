@@ -59,6 +59,7 @@ class AddplanPhotoView extends StatelessWidget {
                 SimpleIconButton(
                     width: 44,
                     height: 44,
+                    pressed: () => {},
                     color: CustomColors.brokenWhite,
                     borderRadius: BorderRadius.circular(30),
                     icon: Icons.add,
