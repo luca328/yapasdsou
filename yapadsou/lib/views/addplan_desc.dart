@@ -34,7 +34,13 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("TITRE", style: CustomTextStyles.subtitle(color: Colors.black),),
+                Text(
+                  "TITRE",
+                  style: CustomTextStyles.subtitle(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
                 Inputs(
                   validate: false,
                   controller: titreController,
@@ -46,11 +52,19 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 ),
               ],
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("DESCRIPTION", style: CustomTextStyles.subtitle(color: Colors.black),),
+                Text(
+                  "DESCRIPTION",
+                  style: CustomTextStyles.subtitle(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
                 Inputs(
                   nbLines: 4,
                   validate: false,
@@ -63,11 +77,19 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 ),
               ],
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("LIEN", style: CustomTextStyles.subtitle(color: Colors.black),),
+                Text(
+                  "LIEN",
+                  style: CustomTextStyles.subtitle(color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
                 Inputs(
                   validate: false,
                   controller: lienController,
@@ -79,8 +101,14 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
                 ),
               ],
             ),
-            const SizedBox(height: 30,),
-            SimpleButton(text: "SUIVANT", pressed: ()=> pageController.animateToPage(2, duration: const Duration(seconds: 1), curve: Curves.ease), color: CustomColors.blue)
+            const SizedBox(
+              height: 30,
+            ),
+            SimpleButton(
+                text: "SUIVANT",
+                pressed: () => pageController.animateToPage(2,
+                    duration: const Duration(seconds: 1), curve: Curves.ease),
+                color: CustomColors.blue)
           ]),
         ),
       ),
@@ -89,21 +117,38 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
         width: double.infinity,
         child: Column(
           children: [
-            const SizedBox(height: 30,),
-            Text("PHOTO DU BON PLAN", style: CustomTextStyles.subtitle(color: Colors.black),),
+            const SizedBox(
+              height: 30,
+            ),
+            Text(
+              "PHOTO DU BON PLAN",
+              style: CustomTextStyles.subtitle(color: Colors.black),
+            ),
             const SizedBox(height: 30),
-            SimpleIconButton(width: 200, height: 200, iconSize: 80, icon: Icons.add, color: CustomColors.blue, borderRadius: BorderRadius.circular(30.0), pressed: () => {},),
+            SimpleIconButton(
+              width: 200,
+              height: 200,
+              iconSize: 80,
+              icon: Icons.add,
+              color: CustomColors.blue,
+              borderRadius: BorderRadius.circular(30.0),
+              pressed: () => {},
+            ),
             const Spacer(),
             SimpleButton(
-              text: "AJOUTER CE BON PLAN",
-              pressed: ()=> { Navigator.push(context, MaterialPageRoute(builder: (context) => PlanView(
-              titre: titreController.text,
-              description: descriptionController.text,
-              lien: lienController.text,
-              rating: 2,
-              )))},
-              color: CustomColors.blue
-            ),
+                text: "AJOUTER CE BON PLAN",
+                pressed: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PlanView(
+                                    titre: titreController.text,
+                                    description: descriptionController.text,
+                                    lien: lienController.text,
+                                    rating: 2,
+                                  )))
+                    },
+                color: CustomColors.blue),
           ],
         ),
       )
@@ -114,95 +159,89 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.centerLeft,
-        color: CustomColors.blue,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, top: 60),
-                    child: Text(
-                      'AJOUTER',
-                      style: CustomTextStyles.title(
+      alignment: Alignment.centerLeft,
+      color: CustomColors.blue,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, top: 60),
+                  child: Text(
+                    'AJOUTER',
+                    style:
+                        CustomTextStyles.title(color: CustomColors.brokenWhite),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, top: 10),
+                  child: Wrap(direction: Axis.vertical, children: [
+                    Text(
+                      'Un bon plan pour en faire',
+                      style: CustomTextStyles.normalInterText(
                           color: CustomColors.brokenWhite),
                       textAlign: TextAlign.left,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30, top: 10),
-                    child: Wrap(
-                      direction: Axis.vertical,
-                      children: [
-                        Text(
-                          'Un bon plan pour en faire',
-                          style: CustomTextStyles.normalInterText(
-                            color: CustomColors.brokenWhite),
-                            textAlign: TextAlign.left,
-                        ),
-                        Text(
-                          'profiter les autres',
-                          style: CustomTextStyles.normalInterText(
-                            color: CustomColors.brokenWhite),
-                            textAlign: TextAlign.left,
-                        ),
-                      ]
+                    Text(
+                      'profiter les autres',
+                      style: CustomTextStyles.normalInterText(
+                          color: CustomColors.brokenWhite),
+                      textAlign: TextAlign.left,
                     ),
-                  )
-                ],
-              ),
-              const Padding(
-                padding: EdgeInsets.all(30),
-              ),
-              Expanded(
-                  child: CustomScrollView(
-                    slivers: [
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            decoration: const BoxDecoration(
-                              color: CustomColors.brokenWhite,
-                              shape: BoxShape.rectangle,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(30.0),
-                                  topRight: Radius.circular(30.0))),
-                            child: Column(
-                              children: [
-                                const Spacer(),
-                                CarouselIndicator(
-                                  count: _widgets.length,
-                                  index: pageIndex,
-                                  width: 30,
-                                  color: Colors.grey,
-                                  activeColor: CustomColors.blue,
-                                ),
-                                const Spacer(),
-                                SizedBox(
-                                  height: 500,
-                                  width: MediaQuery.of(context).size.width * 0.8,
-                                  child: PageView(
-                                    controller: pageController,
-                                    children: _widgets,
-                                    onPageChanged: (index) {
-                                      setState(() {
-                                        pageIndex = index;
-                                      });
-                                    },
-                                  ),
-                                ),
-                            const Spacer()
-                          ],
-                        )
-                      ),
-                    )
-                  ],
+                  ]),
                 )
-              )
-          ]
-      ),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.all(30),
+            ),
+            Expanded(
+                child: CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: const BoxDecoration(
+                          color: CustomColors.brokenWhite,
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30.0),
+                              topRight: Radius.circular(30.0))),
+                      child: Column(
+                        children: [
+                          const Spacer(),
+                          CarouselIndicator(
+                            count: _widgets.length,
+                            index: pageIndex,
+                            width: 30,
+                            color: Colors.grey,
+                            activeColor: CustomColors.blue,
+                          ),
+                          const Spacer(),
+                          SizedBox(
+                            height: 500,
+                            width: MediaQuery.of(context).size.width * 0.8,
+                            child: PageView(
+                              controller: pageController,
+                              children: _widgets,
+                              onPageChanged: (index) {
+                                setState(() {
+                                  pageIndex = index;
+                                });
+                              },
+                            ),
+                          ),
+                          const Spacer()
+                        ],
+                      )),
+                )
+              ],
+            ))
+          ]),
     );
   }
 }
