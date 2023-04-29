@@ -9,9 +9,9 @@ class SimpleIconButton extends StatelessWidget {
   final Color iconColor;
   final void Function() pressed;
   final double iconSize;
-  final BorderRadius? borderRadius;
+  BorderRadiusGeometry borderRadius;
 
-  const SimpleIconButton({
+  SimpleIconButton({
     required this.width,
     required this.height,
     required this.icon,
@@ -19,25 +19,31 @@ class SimpleIconButton extends StatelessWidget {
     required this.pressed,
     this.iconColor = Colors.white,
     this.color = CustomColors.blue,
-    this.borderRadius,
+    BorderRadiusGeometry? borderRadius,
     super.key,
-  });
+  }) : borderRadius = borderRadius ?? BorderRadius.circular(0);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Column(children: [
+      SizedBox(
         width: width,
         height: height,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: borderRadius,
-        ),
-        child: Center(
-          child: Icon(
-            icon,
-            color: iconColor,
-            size: iconSize,
+        child: ElevatedButton(
+          onPressed: pressed,
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(color),
+              shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(borderRadius: borderRadius))),
+          child: Center(
+            child: Icon(
+              icon,
+              color: iconColor,
+              size: iconSize,
+            ),
           ),
-        ));
+        ),
+      ),
+    ]);
   }
 }
