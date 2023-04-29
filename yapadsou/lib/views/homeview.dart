@@ -79,6 +79,7 @@ class _HomeViewState extends State<HomeView> {
                                     width: 57,
                                     height: 57,
                                     borderRadius: BorderRadius.circular(10),
+                                    pressed: () {},
                                     icon: Icons.shopping_bag_outlined,
                                     iconSize: 24),
                                 const SizedBox(
@@ -96,6 +97,7 @@ class _HomeViewState extends State<HomeView> {
                                     height: 57,
                                     color: CustomColors.red,
                                     borderRadius: BorderRadius.circular(10),
+                                    pressed: () {},
                                     icon: Icons.directions_run_outlined,
                                     iconSize: 24),
                                 const SizedBox(
@@ -111,6 +113,7 @@ class _HomeViewState extends State<HomeView> {
                                 SimpleIconButton(
                                     width: 57,
                                     height: 57,
+                                    pressed: () {},
                                     color: CustomColors.lightBlue,
                                     borderRadius: BorderRadius.circular(10),
                                     icon: Icons.train,
@@ -128,6 +131,7 @@ class _HomeViewState extends State<HomeView> {
                                 SimpleIconButton(
                                     width: 57,
                                     height: 57,
+                                    pressed: () {},
                                     color: CustomColors.washedBlue,
                                     borderRadius: BorderRadius.circular(10),
                                     icon: Icons.celebration_outlined,
