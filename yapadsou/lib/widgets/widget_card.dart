@@ -70,8 +70,11 @@ class WidgetCard extends StatelessWidget {
               ],
             ),
           ),
-          Transform.translate(
-            offset: const Offset(65, 68),
+          Positioned(
+            left: 60,
+            bottom: 50,
+            // mainAxisAlignement: MainAxisAlignement.center,
+            // mainAxisSize:
             child : Container(
               width: 36,
               height: 36,
