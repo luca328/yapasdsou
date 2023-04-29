@@ -28,6 +28,7 @@ class WidgetCard extends StatelessWidget {
     BuildContext context,
   ) {
     return Container(
+      
       width: width,
       height: height,
       decoration: BoxDecoration(

@@ -80,7 +80,6 @@ class _HomeViewState extends State<HomeView> {
                                     height: 57,
                                     pressed: () => {},
                                     borderRadius: BorderRadius.circular(10),
-                                    pressed: () {},
                                     icon: Icons.shopping_bag_outlined,
                                     iconSize: 24),
                                 const SizedBox(
@@ -99,7 +98,6 @@ class _HomeViewState extends State<HomeView> {
                                     pressed: () => {},
                                     color: CustomColors.red,
                                     borderRadius: BorderRadius.circular(10),
-                                    pressed: () {},
                                     icon: Icons.directions_run_outlined,
                                     iconSize: 24),
                                 const SizedBox(
