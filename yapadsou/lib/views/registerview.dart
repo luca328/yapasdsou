@@ -110,6 +110,7 @@ class _RegisterState extends State<Register> {
               children: [
                 Text("Déjà un compte ? ", style: CustomTextStyles.normalInterText(),),
                 RichText(
+                  textDirection: TextDirection.ltr,
                   text: TextSpan(
                     text: "Connecte-toi",
                     style: CustomTextStyles.normalInterText(color: CustomColors.blue),
