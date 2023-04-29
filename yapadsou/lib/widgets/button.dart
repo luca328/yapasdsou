@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yapadsou/ui/typographie.dart';
 
 class SimpleButton extends StatelessWidget {
   const SimpleButton({
@@ -23,7 +24,7 @@ class SimpleButton extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(color),
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)))),
-            child:  Text(text),),
+            child:  Text(text, style: CustomTextStyles.normalBoldText(color: Colors.white),),),
       ),
     ]));
   }

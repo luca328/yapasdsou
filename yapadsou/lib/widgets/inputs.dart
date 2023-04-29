@@ -8,7 +8,9 @@ class Inputs extends StatefulWidget {
     this.obscured = false,
     required this.controller,
     required this.passwordController,
+    this.backgroundColor = Colors.transparent,
     this.validate = true,
+    this.nbLines = 1,
   });
 
   final String inputKey;
@@ -17,6 +19,8 @@ class Inputs extends StatefulWidget {
   final TextEditingController controller;
   final TextEditingController passwordController;
   final bool validate;
+  final Color backgroundColor;
+  final int nbLines;
   @override
   State<Inputs> createState() => _InputsState();
 }
@@ -32,6 +36,7 @@ class _InputsState extends State<Inputs> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: widget.nbLines,
       controller: widget.controller,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -59,9 +64,12 @@ class _InputsState extends State<Inputs> {
       key: Key(widget.inputKey),
       obscureText: _isObscured,
       decoration: InputDecoration(
+        filled: widget.backgroundColor != Colors.transparent ? true : false,
+        fillColor: widget.backgroundColor,
         border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(15))),
         labelText: widget.inputText,
+        floatingLabelAlignment: FloatingLabelAlignment.start,
         suffix: widget.obscured
             ? IconButton(
                 padding: const EdgeInsets.all(0),
