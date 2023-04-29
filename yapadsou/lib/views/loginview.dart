@@ -112,6 +112,7 @@ class _LoginState extends State<Login> {
                 Text("Pas encore inscrit ? ",
                     style: CustomTextStyles.normalInterText()),
                 RichText(
+                  textDirection: TextDirection.ltr,
                   text: TextSpan(
                       text: "Allez-viens !",
                       style: CustomTextStyles.normalInterText(
