@@ -73,25 +73,29 @@ class WidgetCard extends StatelessWidget {
                     color: CustomColors.black,
                   ),
                 ),
+                const Spacer(),
               ],
             ),
           ),
-          Center(
-            child : Container(
-              width: logoBorderSize,
-              height: logoBorderSize,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Center( 
-                child: Image.asset(
-                  logo,
-                  width: logoSize,
-                  height: logoSize,
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Center(
+              child : Container(
+                width: logoBorderSize,
+                height: logoBorderSize,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
                 ),
-              ),
-            )
+                child: Center( 
+                  child: Image.asset(
+                    logo,
+                    width: logoSize,
+                    height: logoSize,
+                  ),
+                ),
+              )
+            ),
           )
         ],
       ),
