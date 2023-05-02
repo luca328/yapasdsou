@@ -23,7 +23,6 @@ class Yapasdsou extends StatelessWidget {
         ),
         home: const Scaffold(
             resizeToAvoidBottomInset: false,
-            body: Center(child: Onboarding())));
-            //resizeToAvoidBottomInset: false, body: Center(child: MainView())));
-  } //WidgetCard(title: "test titre", subTitle: "test sous titre", brandImage: CustomImages.sport, logo: CustomImages.basicFit)
+            body: Center(child: Onboarding())));         
+  }
 }
