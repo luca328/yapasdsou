@@ -64,7 +64,6 @@ class WidgetCard extends StatelessWidget {
                     color: CustomColors.black,
                   ),
                 ),
-                const Spacer(),
               ],
             ),
           ),
