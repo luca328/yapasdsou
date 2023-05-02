@@ -10,6 +10,10 @@ class WidgetCard extends StatelessWidget {
   final double width;
   final double titleSize;
   final double subTitleSize;
+  final double imageHeight;
+  final double imageWidth;
+  final double logoHeight;
+  final double logoWidth;
 
   const WidgetCard({
     super.key,
@@ -21,6 +25,10 @@ class WidgetCard extends StatelessWidget {
     required this.height,
     required this.titleSize,
     required this.subTitleSize,
+    required this.imageHeight,
+    required this.imageWidth,
+    required this.logoHeight,
+    required this.logoWidth,
   });
 
   @override
@@ -43,12 +51,13 @@ class WidgetCard extends StatelessWidget {
               children: [
                 Image.asset(
                   brandImage,
-                  width: 144,
-                  height: 90,
+                  width: imageWidth,
+                  height: imageHeight,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
+                const Spacer(),
                 Text(
                   title,
                   style: TextStyle(
@@ -73,8 +82,8 @@ class WidgetCard extends StatelessWidget {
             // mainAxisAlignement: MainAxisAlignement.center,
             // mainAxisSize:
             child : Container(
-              width: 36,
-              height: 36,
+              width: 24,
+              height: 24,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
@@ -82,8 +91,8 @@ class WidgetCard extends StatelessWidget {
               child: Center( 
                 child: Image.asset(
                   logo,
-                  width: 30,
-                  height: 30,
+                  width: logoWidth,
+                  height: logoHeight,
                 ),
               ),
             )
