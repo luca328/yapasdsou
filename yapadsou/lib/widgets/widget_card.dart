@@ -76,11 +76,7 @@ class WidgetCard extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            left: 60,
-            bottom: 50,
-            // mainAxisAlignement: MainAxisAlignement.center,
-            // mainAxisSize:
+          Center(
             child : Container(
               width: logoBorderSize,
               height: logoBorderSize,
