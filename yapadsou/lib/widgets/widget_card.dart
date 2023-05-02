@@ -12,8 +12,8 @@ class WidgetCard extends StatelessWidget {
   final double subTitleSize;
   final double imageHeight;
   final double imageWidth;
-  final double logoHeight;
-  final double logoWidth;
+  final double logoSize;
+  final double logoBorderSize;
 
   const WidgetCard({
     super.key,
@@ -27,8 +27,8 @@ class WidgetCard extends StatelessWidget {
     required this.subTitleSize,
     required this.imageHeight,
     required this.imageWidth,
-    required this.logoHeight,
-    required this.logoWidth,
+    required this.logoSize,
+    required this.logoBorderSize,
   });
 
   @override
@@ -82,8 +82,8 @@ class WidgetCard extends StatelessWidget {
             // mainAxisAlignement: MainAxisAlignement.center,
             // mainAxisSize:
             child : Container(
-              width: 24,
-              height: 24,
+              width: logoBorderSize,
+              height: logoBorderSize,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
@@ -91,8 +91,8 @@ class WidgetCard extends StatelessWidget {
               child: Center( 
                 child: Image.asset(
                   logo,
-                  width: logoWidth,
-                  height: logoHeight,
+                  width: logoSize,
+                  height: logoSize,
                 ),
               ),
             )

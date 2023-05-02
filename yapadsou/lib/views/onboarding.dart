@@ -36,6 +36,10 @@ class _OnboardingState extends State<Onboarding> {
             spacing: 10,
             children: [
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.sport,
                 logo: CustomImages.basicFit,
                 subTitle: "2 mois offerts",
@@ -46,6 +50,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.bar,
                 logo: CustomImages.barathon,
                 subTitle: "1 verre acheté = 1 offert",
@@ -56,6 +64,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.chambre,
                 logo: CustomImages.biliJeu,
                 subTitle: "Pas besoin de garants",
@@ -66,6 +78,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.tacos,
                 logo: CustomImages.otacos,
                 subTitle: "5€99, dépêche toi !",
@@ -96,6 +112,10 @@ class _OnboardingState extends State<Onboarding> {
             spacing: 10,
             children: [
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.sport,
                 logo: CustomImages.basicFit,
                 subTitle: "2 mois offerts",
@@ -106,6 +126,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.bar,
                 logo: CustomImages.barathon,
                 subTitle: "1 verre acheté = 1 offert",
@@ -116,6 +140,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.chambre,
                 logo: CustomImages.biliJeu,
                 subTitle: "Pas besoin de garants",
@@ -126,6 +154,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.tacos,
                 logo: CustomImages.otacos,
                 subTitle: "5€99, dépêche toi !",
@@ -156,6 +188,10 @@ class _OnboardingState extends State<Onboarding> {
             spacing: 10,
             children: [
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.sport,
                 logo: CustomImages.basicFit,
                 subTitle: "2 mois offerts",
@@ -166,6 +202,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.bar,
                 logo: CustomImages.barathon,
                 subTitle: "1 verre acheté = 1 offert",
@@ -176,6 +216,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.chambre,
                 logo: CustomImages.biliJeu,
                 subTitle: "Pas besoin de garants",
@@ -186,6 +230,10 @@ class _OnboardingState extends State<Onboarding> {
                 subTitleSize: 6.54,
               ),
               WidgetCard(
+                imageHeight: 60,
+                imageWidth: 95,
+                logoSize: 20,
+                logoBorderSize: 24,
                 brandImage: CustomImages.tacos,
                 logo: CustomImages.otacos,
                 subTitle: "5€99, dépêche toi !",

@@ -162,6 +162,10 @@ class _HomeViewState extends State<HomeView> {
                           spacing: 10,
                           children: [
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.sport,
                               logo: CustomImages.basicFit,
                               subTitle: "2 mois offerts",
@@ -172,6 +176,10 @@ class _HomeViewState extends State<HomeView> {
                               subTitleSize: 10,
                             ),
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.bar,
                               logo: CustomImages.barathon,
                               subTitle: "1 verre acheté = 1 offert",
@@ -182,6 +190,10 @@ class _HomeViewState extends State<HomeView> {
                               subTitleSize: 10,
                             ),
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.chambre,
                               logo: CustomImages.biliJeu,
                               subTitle: "Pas besoin de garants",
@@ -192,6 +204,10 @@ class _HomeViewState extends State<HomeView> {
                               subTitleSize: 10,
                             ),
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.tacos,
                               logo: CustomImages.otacos,
                               subTitle: "5€99, dépêche toi !",
@@ -202,6 +218,10 @@ class _HomeViewState extends State<HomeView> {
                               subTitleSize: 10,
                             ),
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.sport,
                               logo: CustomImages.basicFit,
                               subTitle: "2 mois offerts",
@@ -212,6 +232,10 @@ class _HomeViewState extends State<HomeView> {
                               subTitleSize: 10,
                             ),
                             WidgetCard(
+                              imageHeight: 90,
+                              imageWidth: 144,
+                              logoSize: 30,
+                              logoBorderSize: 36,
                               brandImage: CustomImages.sport,
                               logo: CustomImages.basicFit,
                               subTitle: "2 mois offerts",
