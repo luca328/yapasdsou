@@ -21,6 +21,6 @@ class Yapasdsou extends StatelessWidget {
         ),
         home: const Scaffold(
             resizeToAvoidBottomInset: false,
-            body: Center(child: Onboarding())));         
+            body: Center(child: Onboarding())));
   }
 }
