@@ -45,23 +45,22 @@ class PlanView extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.3,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                    color: Colors.white,
-                    gradient: LinearGradient(
-                      begin: FractionalOffset.centerLeft,
-                      end: FractionalOffset.centerRight,
-                      colors: [
-                        Colors.black.withOpacity(0.7),
-                        Colors.black.withOpacity(0.3),
-                        Colors.black.withOpacity(0.1),
-                      ],
-                      stops: const [
-                        0.0,
-                        0.5,
-                        1.0
-                      ]
-                    )
-                  ),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30.0)),
+                      color: Colors.white,
+                      gradient: LinearGradient(
+                          begin: FractionalOffset.centerLeft,
+                          end: FractionalOffset.centerRight,
+                          colors: [
+                            Colors.black.withOpacity(0.7),
+                            Colors.black.withOpacity(0.3),
+                            Colors.black.withOpacity(0.1),
+                          ],
+                          stops: const [
+                            0.0,
+                            0.5,
+                            1.0
+                          ])),
                 ),
                 Positioned(
                   top: 100,
@@ -69,25 +68,46 @@ class PlanView extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(titre, style: CustomTextStyles.titleSmall(color: Colors.white),),
-                        const SizedBox(height: 5),
-                        Text("2 mois offerts", style: CustomTextStyles.normalBoldInterText(color: Colors.white),),
-                      ],
+                    children: [
+                      Text(
+                        titre,
+                        style: CustomTextStyles.titleSmall(color: Colors.white),
+                      ),
+                      const SizedBox(height: 5),
+                      Text(
+                        "2 mois offerts",
+                        style: CustomTextStyles.normalBoldInterText(
+                            color: Colors.white),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            Post(text: description, rate: rating, author: "Killian74", authorImage: CustomImages.profilePicture,),
+            Post(
+              text: description,
+              rate: rating,
+              author: "Killian74",
+              authorImage: CustomImages.profilePicture,
+            ),
             const SizedBox(height: 20),
-            Text("testée par 32 galériens", style: CustomTextStyles.normalBoldText(color: Colors.black)),
+            Text("testée par 32 galériens",
+                style: CustomTextStyles.normalBoldText(color: Colors.black)),
             const Spacer(),
-            SimpleButton(text: "PROFITER DE L'OFFRE", pressed: () => { Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomeView()))}, color: CustomColors.blue),
+            SimpleButton(
+                width: 261,
+                height: 56,
+                text: "PROFITER DE L'OFFRE",
+                pressed: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeView()))
+                    },
+                color: CustomColors.blue),
             const SizedBox(height: 30),
-
           ],
-        )
-    );
+        ));
   }
 }
