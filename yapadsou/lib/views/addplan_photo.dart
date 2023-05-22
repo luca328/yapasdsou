@@ -70,6 +70,7 @@ class AddplanPhotoView extends StatelessWidget {
             ),
             Expanded(
               child: Container(
+                padding: const EdgeInsets.all(20.0),
                 clipBehavior: Clip.hardEdge,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
