@@ -2,9 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
-import 'package:yapadsou/views/mainView.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
+import 'package:yapadsou/views/main_view.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -73,6 +73,8 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 10),
                     SimpleButton(
+                      width: 261,
+                      height: 56,
                         text: "SE CONNECTER",
                         pressed: () => {
                               if (_formKey.currentState!.validate())

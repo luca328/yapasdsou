@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:yapadsou/assets/colors/colors.dart';
 
 class WidgetCard extends StatelessWidget {
   final String title;
   final String subTitle;
   final String brandImage;
   final String logo;
+  final double height;
+  final double width;
+  final double titleSize;
+  final double subTitleSize;
+  final double imageHeight;
+  final double imageWidth;
+  final double logoSize;
+  final double logoBorderSize;
 
   const WidgetCard({
     super.key,
@@ -12,24 +21,27 @@ class WidgetCard extends StatelessWidget {
     required this.logo,
     required this.subTitle,
     required this.title,
+    required this.width,
+    required this.height,
+    required this.titleSize,
+    required this.subTitleSize,
+    required this.imageHeight,
+    required this.imageWidth,
+    required this.logoSize,
+    required this.logoBorderSize,
   });
 
   @override
-  Widget build(BuildContext context,) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Container(
-      width: 159,
-      height: 162,
+      
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
+        color: CustomColors.brokenWhite,
       ),
       child: Stack(
         children: [
@@ -39,46 +51,51 @@ class WidgetCard extends StatelessWidget {
               children: [
                 Image.asset(
                   brandImage,
-                  width: 144,
-                  height: 90,
+                  width: imageWidth,
+                  height: imageHeight,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Spacer(),
                 Text(
                   title,
-                  style: const TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(
+                    fontSize: titleSize,
                     fontWeight: FontWeight.bold,
+                    color: CustomColors.black,
                   ),
                 ),
-                const SizedBox(height: 5),
                 Text(
                   subTitle,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey,
+                  style: TextStyle(
+                    fontSize: subTitleSize,
+                    color: CustomColors.black,
                   ),
                 ),
                 const Spacer(),
               ],
             ),
           ),
-          Transform.translate(
-            offset: const Offset(65, 68),
-            child : Container(
-              width: 36,
-              height: 36,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-              ),
-              child: Center( 
-                child: Image.asset(
-                  logo,
-                  width: 30,
-                  height: 30,
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Center(
+              child : Container(
+                width: logoBorderSize,
+                height: logoBorderSize,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
                 ),
-              ),
-            )
+                child: Center( 
+                  child: Image.asset(
+                    logo,
+                    width: logoSize,
+                    height: logoSize,
+                  ),
+                ),
+              )
+            ),
           )
         ],
       ),

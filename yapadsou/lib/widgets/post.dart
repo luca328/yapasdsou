@@ -5,6 +5,7 @@ import 'package:yapadsou/widgets/rate.dart';
 
 class Post extends StatelessWidget {
   const Post({
+    super.key,
     required this.text,
     required this.rate,
     required this.author,
