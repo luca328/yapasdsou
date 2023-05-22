@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               const Padding(
                 padding: EdgeInsets.all(30),
-                child: SearchBar(
+                child: CustomSearchBar(
                   inputKey: "searchBar",
                   inputText: "Cherche ton bon plan",
                 ),
