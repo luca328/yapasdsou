@@ -17,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-          alignment: Alignment.centerLeft,
           color: CustomColors.blue,
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +25,7 @@ class _HomeViewState extends State<HomeView> {
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 30, top: 30),
+                      padding: const EdgeInsets.only(left: 30, top: 70),
                       child: Text(
                         'COUCOU TOI',
                         style: CustomTextStyles.title(
@@ -55,6 +54,7 @@ class _HomeViewState extends State<HomeView> {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    padding: const EdgeInsets.only(top: 30),
                     width: double.infinity,
                     decoration: const BoxDecoration(
                         color: CustomColors.brokenWhite,
@@ -115,7 +115,7 @@ class _HomeViewState extends State<HomeView> {
                                       pressed: () => {},
                                       color: CustomColors.lightBlue,
                                       borderRadius: BorderRadius.circular(10),
-                                      icon: Icons.train,
+                                      icon: Icons.train_outlined,
                                       iconSize: 24),
                                   const SizedBox(
                                     height: 15,
@@ -146,19 +146,29 @@ class _HomeViewState extends State<HomeView> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Text(
-                              "LES PLANS DU MOMENTS",
-                              style: CustomTextStyles.normalText(
-                                  color: CustomColors.black),
-                              textAlign: TextAlign.left,
+                            padding: const EdgeInsets.only(
+                                left: 20, top: 30, bottom: 30, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "LES PLANS DU MOMENTS",
+                                  style: CustomTextStyles.normalText(
+                                      color: CustomColors.black),
+                                ),
+                                Text(
+                                  "Voir tout",
+                                  style: CustomTextStyles.normalBoldInterText(
+                                      color: CustomColors.red),
+                                ),
+                              ],
                             ),
                           ),
                           Wrap(
                             alignment: WrapAlignment.spaceEvenly,
                             runAlignment: WrapAlignment.spaceEvenly,
                             runSpacing: 10,
-                            spacing: 10,
+                            spacing: 48,
                             children: [
                               WidgetCard(
                                 imageHeight: 90,
