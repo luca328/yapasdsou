@@ -9,6 +9,6 @@ void main() async{
       options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
-    const Yapasdsou()
+    const Yapasdsou('_e7QUWJSLKmlDQLbARTdRzUBV3iB9UfC')
   );
 }
