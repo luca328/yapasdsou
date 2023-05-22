@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
+import 'package:yapadsou/datas/firestore.dart';
+import 'package:yapadsou/models/category.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/widgets/searchbar.dart';
 import 'package:yapadsou/widgets/simple_icon_button.dart';
@@ -13,6 +15,21 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List<Category> categories = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getCategories();
+  }
+
+  void getCategories() async {
+    final categoriesList = await Firestore.getAllEntries();
+    setState(() {
+      categories = categoriesList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -70,79 +87,30 @@ class _HomeViewState extends State<HomeView> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.shopping_bag_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
+                          children: categories
+                              .map(
+                                (category) => Column(
+                                  children: [
+                                    SimpleIconButton(
+                                        width: 57,
+                                        height: 57,
+                                        pressed: () => {},
+                                        color: CustomColors.getColor(category.colorName),
+                                        borderRadius: BorderRadius.circular(10),
+                                        icon: CustomImages.getIcon(
+                                            category.iconName),
+                                        iconSize: 24),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Text(category.title,
+                                        style: CustomTextStyles.normalBoldText(
+                                            color: CustomColors.getColor(
+                                                category.colorName)))
+                                  ],
                                 ),
-                                Text("courses",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.blue))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.red,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.directions_run_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("sport",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.red))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.lightBlue,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.train,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("trains",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.lightBlue))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.washedBlue,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.celebration_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("soirées",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.washedBlue))
-                              ],
-                            )
-                          ],
+                              )
+                              .toList(),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15.0),

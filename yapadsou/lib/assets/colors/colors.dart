@@ -13,4 +13,34 @@ class CustomColors {
   static const red = Color(0xFFF4696A);
   static const lightBlue = Color(0xFF579BFE);
   static const gold = Color(0xFFFFC107);
+
+  static Color getColor(String colorName) {
+    switch (colorName) {
+      case 'pink':
+        return pink;
+      case 'grey':
+        return grey;
+      case 'lightGrey':
+        return lightGrey;
+      case 'lighterGrey':
+        return lighterGrey;
+      case 'blue':
+        return blue;
+      case 'washedBlue':
+        return washedBlue;
+      case 'black':
+        return black;
+      case 'lightGrayContainer':
+        return lightGrayContainer;
+      case 'brokenWhite':
+        return brokenWhite;
+      case 'red':
+        return red;
+      case 'lightBlue':
+        return lightBlue;
+      case 'gold':
+        return gold;
+    }
+    return blue;
+  }
 }
