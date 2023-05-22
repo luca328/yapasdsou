@@ -138,7 +138,7 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
             ),
             const Spacer(),
             SimpleButton(
-                width: 261,
+                width: 300,
                 height: 56,
                 text: "AJOUTER CE BON PLAN",
                 pressed: () => {

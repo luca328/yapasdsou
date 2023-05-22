@@ -96,7 +96,7 @@ class PlanView extends StatelessWidget {
                 style: CustomTextStyles.normalBoldText(color: Colors.black)),
             const Spacer(),
             SimpleButton(
-                width: 261,
+                width: 300,
                 height: 56,
                 text: "PROFITER DE L'OFFRE",
                 pressed: () => {
