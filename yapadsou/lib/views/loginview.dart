@@ -73,6 +73,8 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 10),
                     SimpleButton(
+                      width: 261,
+                      height: 56,
                         text: "SE CONNECTER",
                         pressed: () => {
                               if (_formKey.currentState!.validate())

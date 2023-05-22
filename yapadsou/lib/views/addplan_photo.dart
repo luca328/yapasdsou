@@ -161,6 +161,8 @@ class AddplanPhotoView extends StatelessWidget {
                       ),
                       const Spacer(),
                       SimpleButton(
+                          width: 261,
+                          height: 56,
                           text: "ENREGISTRER",
                           pressed: () => {},
                           color: CustomColors.blue),

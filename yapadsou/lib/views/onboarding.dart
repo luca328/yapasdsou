@@ -293,6 +293,8 @@ class _OnboardingState extends State<Onboarding> {
           ),
           const Spacer(),
           SimpleButton(
+            width: 261,
+            height: 56,
             text: "C’est parti !",
             pressed: () {
               Navigator.push(
