@@ -52,7 +52,9 @@ class _InputsState extends State<Inputs> {
             return 'Please enter a valid email';
           }
         }
-        if (widget.inputKey == 'password' && value.isNotEmpty && widget.validate) {
+        if (widget.inputKey == 'password' &&
+            value.isNotEmpty &&
+            widget.validate) {
           RegExp exp = RegExp(
               r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~?'\-_><]).{8,}$");
           if (!exp.hasMatch(value)) {
@@ -71,23 +73,26 @@ class _InputsState extends State<Inputs> {
         labelText: widget.inputText,
         floatingLabelAlignment: FloatingLabelAlignment.start,
         suffix: widget.obscured
-            ? IconButton(
-                padding: const EdgeInsets.all(0),
-                iconSize: 20.0,
-                icon: _isObscured
-                    ? const Icon(
-                        Icons.visibility_off,
-                        color: Colors.grey,
-                      )
-                    : const Icon(
-                        Icons.visibility,
-                        color: Colors.black,
-                      ),
-                onPressed: () {
-                  setState(() {
-                    _isObscured = !_isObscured;
-                  });
-                },
+            ? SizedBox(
+                height: 20,
+                child: IconButton(
+                  padding: EdgeInsets.zero,
+                  iconSize: 20.0,
+                  icon: _isObscured
+                      ? const Icon(
+                          Icons.visibility_off,
+                          color: Colors.grey,
+                        )
+                      : const Icon(
+                          Icons.visibility,
+                          color: Colors.black,
+                        ),
+                  onPressed: () {
+                    setState(() {
+                      _isObscured = !_isObscured;
+                    });
+                  },
+                ),
               )
             : null,
       ),
