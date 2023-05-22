@@ -54,15 +54,18 @@ class AddplanPhotoView extends StatelessWidget {
                     )
                   ],
                 ),
-                SimpleIconButton(
-                    width: 44,
-                    height: 44,
-                    pressed: () => {},
-                    color: CustomColors.brokenWhite,
-                    borderRadius: BorderRadius.circular(30),
-                    icon: Icons.add,
-                    iconColor: CustomColors.blue,
-                    iconSize: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: SimpleIconButton(
+                      width: 44,
+                      height: 44,
+                      pressed: () => {},
+                      color: CustomColors.brokenWhite,
+                      borderRadius: BorderRadius.circular(30),
+                      icon: Icons.add,
+                      iconColor: CustomColors.blue,
+                      iconSize: 16),
+                ),
               ],
             ),
             const Padding(
