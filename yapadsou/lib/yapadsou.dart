@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
-import 'package:yapadsou/views/mainView.dart';
 import 'package:yapadsou/views/onboarding.dart';
-import 'package:yapadsou/views/addplan_photo.dart';
 import 'package:flutter/services.dart';
 
 class Yapasdsou extends StatelessWidget {
@@ -23,6 +21,6 @@ class Yapasdsou extends StatelessWidget {
         ),
         home: const Scaffold(
             resizeToAvoidBottomInset: false,
-            body: Center(child: Onboarding())));         
+            body: Center(child: Onboarding())));
   }
 }

@@ -1,8 +1,6 @@
-import 'package:carousel_indicator/carousel_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/ui/typographie.dart';
-import 'package:yapadsou/views/planview.dart';
 import 'package:yapadsou/widgets/button.dart';
 import 'package:yapadsou/widgets/inputs.dart';
 import 'package:yapadsou/widgets/simple_icon_button.dart';
@@ -56,15 +54,18 @@ class AddplanPhotoView extends StatelessWidget {
                     )
                   ],
                 ),
-                SimpleIconButton(
-                    width: 44,
-                    height: 44,
-                    pressed: () => {},
-                    color: CustomColors.brokenWhite,
-                    borderRadius: BorderRadius.circular(30),
-                    icon: Icons.add,
-                    iconColor: CustomColors.blue,
-                    iconSize: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: SimpleIconButton(
+                      width: 44,
+                      height: 44,
+                      pressed: () => {},
+                      color: CustomColors.brokenWhite,
+                      borderRadius: BorderRadius.circular(30),
+                      icon: Icons.add,
+                      iconColor: CustomColors.blue,
+                      iconSize: 16),
+                ),
               ],
             ),
             const Padding(
@@ -72,6 +73,7 @@ class AddplanPhotoView extends StatelessWidget {
             ),
             Expanded(
               child: Container(
+                padding: const EdgeInsets.all(20.0),
                 clipBehavior: Clip.hardEdge,
                 width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
@@ -162,6 +164,8 @@ class AddplanPhotoView extends StatelessWidget {
                       ),
                       const Spacer(),
                       SimpleButton(
+                          width: 500,
+                          height: 55,
                           text: "ENREGISTRER",
                           pressed: () => {},
                           color: CustomColors.blue),

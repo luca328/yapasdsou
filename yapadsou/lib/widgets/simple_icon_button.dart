@@ -9,7 +9,7 @@ class SimpleIconButton extends StatelessWidget {
   final Color iconColor;
   final void Function() pressed;
   final double iconSize;
-  BorderRadiusGeometry borderRadius;
+  final BorderRadiusGeometry borderRadius;
 
   SimpleIconButton({
     required this.width,
