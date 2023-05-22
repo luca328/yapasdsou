@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:yapadsou/datas/authentication.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/views/loginview.dart';
@@ -87,21 +88,7 @@ class _RegisterState extends State<Register> {
                         pressed: () => {
                               if (_formKey.currentState!.validate())
                                 {
-                                  /*showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Row(children: [
-                              Text(emailController.text),
-                              const Text(" - "),
-                              Text(passwordController.text),
-                              const Text(" - "),
-                              Text(confirmController.text),
-                            ]
-                            )
-                          );
-                        },
-                      ),*/
+                                  Authentication.register(emailController.text, passwordController.text),
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(

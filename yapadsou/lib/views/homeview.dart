@@ -105,12 +105,12 @@ class _HomeViewState extends State<HomeView> {
                                     ),
                                     Text(category.title,
                                         style: CustomTextStyles.normalBoldText(
-                                            color: CustomColors.getColor(
-                                                category.colorName)))
+                                            color: CustomColors.getColor(category.colorName)
+                                        )
+                                    )
                                   ],
                                 ),
-                              )
-                              .toList(),
+                              ).toList(),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15.0),
