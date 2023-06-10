@@ -9,9 +9,9 @@ void main() async {
       await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
   );
+  FirebaseMessaging.instance;
   runApp(
     const Yapasdsou('_e7QUWJSLKmlDQLbARTdRzUBV3iB9UfC')
   );
-  FirebaseMessaging.instance;
-  runApp(const Yapasdsou());
+  
 }
