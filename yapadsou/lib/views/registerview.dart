@@ -20,6 +20,9 @@ class _RegisterState extends State<Register> {
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
 
+  dynamic textError = '';
+  late Map<String, dynamic> authenticationResult;
+
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
@@ -76,7 +79,13 @@ class _RegisterState extends State<Register> {
                       obscured: true,
                       passwordController: passwordController,
                     ),
-                    const SizedBox(height: 100),
+                    const SizedBox(height: 40),
+                    Text(
+                      textError,
+                      style: CustomTextStyles.normalInterText(
+                          color: CustomColors.red),
+                    ),
+                    const SizedBox(height: 40),
                     Text(
                       "En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou",
                       style: CustomTextStyles.normalInterText(),
@@ -85,15 +94,25 @@ class _RegisterState extends State<Register> {
                         width: 261,
                         height: 56,
                         text: "SE CONNECTER",
-                        pressed: () => {
+                        pressed: () async => {
                               if (_formKey.currentState!.validate())
                                 {
-                                  Authentication.register(emailController.text, passwordController.text),
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const MainView()),
+                                  authenticationResult =await Authentication.register(
+                                          emailController.text,
+                                          passwordController.text
                                   ),
+                                  if (authenticationResult.keys.contains("error"))
+                                    {
+                                      setState(() => textError = authenticationResult["error"])
+                                    }
+                                  else
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const MainView()),
+                                      ),
+                                    }
                                 },
                             },
                         color: CustomColors.blue),

@@ -18,6 +18,9 @@ class _LoginState extends State<Login> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  String textError = '';
+  late Map<String, dynamic> authenticationResult;
+
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
@@ -41,7 +44,9 @@ class _LoginState extends State<Login> {
           Text("Reviens vite pour profiter\ndes bons plans",
               textAlign: TextAlign.center,
               style: CustomTextStyles.normalText(color: CustomColors.black)),
-          const SizedBox(height: 50),
+          const SizedBox(height: 20),
+          Text(textError, style: CustomTextStyles.normalInterText(color: CustomColors.red)),
+          const SizedBox(height: 20),
           Material(
             child: Form(
               key: _formKey,
@@ -74,21 +79,32 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 10),
                     SimpleButton(
-                      width: 261,
-                      height: 56,
+                        width: 261,
+                        height: 56,
                         text: "SE CONNECTER",
-                        pressed: () => {
+                        pressed: () async => {
                               if (_formKey.currentState!.validate())
                                 {
-                                  Authentication.authenticate(emailController.text, passwordController.text), 
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const MainView()),
+                                  authenticationResult = await Authentication.authenticate(
+                                          emailController.text,
+                                          passwordController.text
                                   ),
+                                  if (authenticationResult.keys.contains("error"))
+                                    {
+                                      setState(() => textError = authenticationResult["error"])
+                                    }
+                                  else
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const MainView()),
+                                      ),
+                                    }
                                 },
                             },
-                        color: CustomColors.blue),
+                        color: CustomColors.blue
+                    ),
                   ],
                 ),
               ),
