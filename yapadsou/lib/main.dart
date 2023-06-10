@@ -13,5 +13,4 @@ void main() async {
   runApp(
     const Yapasdsou('_e7QUWJSLKmlDQLbARTdRzUBV3iB9UfC')
   );
-  
 }
