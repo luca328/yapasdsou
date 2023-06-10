@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:yapadsou/datas/authentication.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/views/loginview.dart';
@@ -18,6 +19,9 @@ class _RegisterState extends State<Register> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmController = TextEditingController();
+
+  dynamic textError = '';
+  late Map<String, dynamic> authenticationResult;
 
   @override
   void dispose() {
@@ -75,7 +79,13 @@ class _RegisterState extends State<Register> {
                       obscured: true,
                       passwordController: passwordController,
                     ),
-                    const SizedBox(height: 100),
+                    const SizedBox(height: 40),
+                    Text(
+                      textError,
+                      style: CustomTextStyles.normalInterText(
+                          color: CustomColors.red),
+                    ),
+                    const SizedBox(height: 40),
                     Text(
                       "En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou",
                       style: CustomTextStyles.normalInterText(),
@@ -84,29 +94,25 @@ class _RegisterState extends State<Register> {
                         width: 261,
                         height: 56,
                         text: "SE CONNECTER",
-                        pressed: () => {
+                        pressed: () async => {
                               if (_formKey.currentState!.validate())
                                 {
-                                  /*showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Row(children: [
-                              Text(emailController.text),
-                              const Text(" - "),
-                              Text(passwordController.text),
-                              const Text(" - "),
-                              Text(confirmController.text),
-                            ]
-                            )
-                          );
-                        },
-                      ),*/
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const MainView()),
+                                  authenticationResult =await Authentication.register(
+                                          emailController.text,
+                                          passwordController.text
                                   ),
+                                  if (authenticationResult.keys.contains("error"))
+                                    {
+                                      setState(() => textError = authenticationResult["error"])
+                                    }
+                                  else
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const MainView()),
+                                      ),
+                                    }
                                 },
                             },
                         color: CustomColors.blue),

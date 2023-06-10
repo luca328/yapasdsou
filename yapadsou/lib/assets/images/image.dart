@@ -24,4 +24,28 @@ class CustomImages {
     }
     return Icons.access_time_rounded;
   }
+
+  static String getImage(String name) {
+    switch (name) {
+      case "tacos":
+        return tacos;
+      case "bar":
+        return bar;
+      case "barathon":
+        return barathon;
+      case "basicfit":
+        return basicFit;
+      case "bilijeu":
+        return biliJeu;
+      case "chambre":
+        return chambre;
+      case "otacos":
+        return otacos;
+      case "sport":
+        return sport;
+      case "profilepicture":
+        return profilePicture;
+    }
+    return tacos;
+  }
 }
