@@ -105,6 +105,8 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
               height: 30,
             ),
             SimpleButton(
+                width: 261,
+                height: 56,
                 text: "SUIVANT",
                 pressed: () => pageController.animateToPage(2,
                     duration: const Duration(seconds: 1), curve: Curves.ease),
@@ -136,6 +138,8 @@ class _AddPlanDescViewState extends State<AddPlanDescView> {
             ),
             const Spacer(),
             SimpleButton(
+                width: 261,
+                height: 56,
                 text: "AJOUTER CE BON PLAN",
                 pressed: () => {
                       Navigator.push(

@@ -7,16 +7,20 @@ class SimpleButton extends StatelessWidget {
     required this.text,
     required this.pressed,
     required this.color,
+    required this.width,
+    required this.height,
   });
   final String text;
   final void Function() pressed;
   final Color color;
+  final double width;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(
-    width: 261,
-    height: 56,
+    width: width,
+    height: height,
     child: ElevatedButton(
         onPressed: pressed,
         style: ButtonStyle(

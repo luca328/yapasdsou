@@ -1,16 +1,30 @@
 # yapadsou
 
-A new Flutter project.
+Cette application est une application de gestion d'offres peu couteuse.
 
-## Getting Started
+## Pour commencer
 
-This project is a starting point for a Flutter application.
+Installez [Flutter](https://flutter.dev/docs/get-started/install)
 
-A few resources to get you started if this is your first Flutter project:
+Clonez le projet
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+git clone https://github.com/luca328/yapadsou.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Pour lancer
+
+Soit avec un emulateur Android Studio et dans ce cas là lancez avec ```bash flutter run ```
+Sinon si vous avez un téléphone physique, suivez ce tutoriel :
+
+https://flutter.dev/docs/get-started/android/setup
+
+et lancez soit directement sur Visual Studio code grâce à l'outil "Flutter: Run" de lextension flutter
+soit grâce à la commande ```flutter run```
+
+## Pour utiliser l'application
+
+1. Cliquez sur "C'est parti" lorsque vous arrivez sur la première page de l'application
+1. Si vous avez un compte, connectez-vous en cliquant sur "Connecte-toi" en bas à droite sinon créez-vous un compte
+1. Profitez!
+

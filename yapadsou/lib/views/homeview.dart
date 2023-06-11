@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/images/image.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
+import 'package:yapadsou/datas/firestore.dart';
+import 'package:yapadsou/models/category.dart';
+import 'package:yapadsou/models/plan.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/widgets/searchbar.dart';
 import 'package:yapadsou/widgets/simple_icon_button.dart';
@@ -13,6 +16,30 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  List<Category> categories = [];
+  List<Plan> plans = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getCategories();
+    getPlans();
+  }
+
+  void getCategories() async {
+    final categoriesList = await Firestore.getAllCategories();
+    setState(() {
+      categories = categoriesList;
+    });
+  }
+
+  void getPlans() async {
+    final plansList = await Firestore.getAllPlans();
+    setState(() {
+      plans = plansList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               const Padding(
                 padding: EdgeInsets.all(30),
-                child: SearchBar(
+                child: CustomSearchBar(
                   inputKey: "searchBar",
                   inputText: "Cherche ton bon plan",
                 ),
@@ -70,79 +97,31 @@ class _HomeViewState extends State<HomeView> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.shopping_bag_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
+                          children: categories
+                              .map(
+                                (category) => Column(
+                                  children: [
+                                    SimpleIconButton(
+                                        width: 57,
+                                        height: 57,
+                                        pressed: () => {},
+                                        color: CustomColors.getColor(
+                                            category.colorName),
+                                        borderRadius: BorderRadius.circular(10),
+                                        icon: CustomImages.getIcon(
+                                            category.iconName),
+                                        iconSize: 24),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Text(category.title,
+                                        style: CustomTextStyles.normalBoldText(
+                                            color: CustomColors.getColor(
+                                                category.colorName)))
+                                  ],
                                 ),
-                                Text("courses",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.blue))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.red,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.directions_run_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("sport",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.red))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.lightBlue,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.train,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("trains",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.lightBlue))
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                SimpleIconButton(
-                                    width: 57,
-                                    height: 57,
-                                    pressed: () => {},
-                                    color: CustomColors.washedBlue,
-                                    borderRadius: BorderRadius.circular(10),
-                                    icon: Icons.celebration_outlined,
-                                    iconSize: 24),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text("soirées",
-                                    style: CustomTextStyles.normalBoldText(
-                                        color: CustomColors.washedBlue))
-                              ],
-                            )
-                          ],
+                              )
+                              .toList(),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15.0),
@@ -158,92 +137,22 @@ class _HomeViewState extends State<HomeView> {
                           runAlignment: WrapAlignment.spaceEvenly,
                           runSpacing: 10,
                           spacing: 10,
-                          children: [
-                            WidgetCard(
-                              imageHeight: 90,
-                              imageWidth: 144,
-                              logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.sport,
-                              logo: CustomImages.basicFit,
-                              subTitle: "2 mois offerts",
-                              title: "Abonnement 1 an",
+                          children: plans.map(
+                            (plan) => WidgetCard(
+                              brandImage: CustomImages.getImage(plan.mainImage),
+                              logo: CustomImages.getImage(plan.logo),
+                              subTitle: plan.subtitle,
+                              title: plan.title,
                               width: 159,
                               height: 162,
                               titleSize: 14,
                               subTitleSize: 10,
-                            ),
-                            WidgetCard(
                               imageHeight: 90,
                               imageWidth: 144,
                               logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.bar,
-                              logo: CustomImages.barathon,
-                              subTitle: "1 verre acheté = 1 offert",
-                              title: "Le grand Barathon",
-                              width: 159,
-                              height: 162,
-                              titleSize: 12,
-                              subTitleSize: 10,
-                            ),
-                            WidgetCard(
-                              imageHeight: 90,
-                              imageWidth: 144,
-                              logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.chambre,
-                              logo: CustomImages.biliJeu,
-                              subTitle: "Pas besoin de garants",
-                              title: "Garantie appart",
-                              width: 159,
-                              height: 162,
-                              titleSize: 12,
-                              subTitleSize: 10,
-                            ),
-                            WidgetCard(
-                              imageHeight: 90,
-                              imageWidth: 144,
-                              logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.tacos,
-                              logo: CustomImages.otacos,
-                              subTitle: "5€99, dépêche toi !",
-                              title: "Giga MAXI Tacos",
-                              width: 159,
-                              height: 162,
-                              titleSize: 12,
-                              subTitleSize: 10,
-                            ),
-                            WidgetCard(
-                              imageHeight: 90,
-                              imageWidth: 144,
-                              logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.sport,
-                              logo: CustomImages.basicFit,
-                              subTitle: "2 mois offerts",
-                              title: "Abonnement 1 an",
-                              width: 159,
-                              height: 162,
-                              titleSize: 12,
-                              subTitleSize: 10,
-                            ),
-                            WidgetCard(
-                              imageHeight: 90,
-                              imageWidth: 144,
-                              logoSize: 30,
-                              logoBorderSize: 36,
-                              brandImage: CustomImages.sport,
-                              logo: CustomImages.basicFit,
-                              subTitle: "2 mois offerts",
-                              title: "Abonnement 1 an",
-                              width: 159,
-                              height: 162,
-                              titleSize: 12,
-                              subTitleSize: 10,
-                            ),
-                          ],
+                              logoBorderSize: 36
+                            )
+                          ).toList()
                         ),
                       ],
                     ),

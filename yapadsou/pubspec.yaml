@@ -10,6 +10,11 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   carousel_indicator: ^1.0.6
+  firebase_core: ^2.13.0
+  cloud_firestore: ^4.7.1
+  amplitude_flutter: ^3.14.0
+  firebase_auth: ^4.6.1
+  firebase_messaging: ^14.6.1
 
 dev_dependencies:
   flutter_test:

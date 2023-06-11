@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:yapadsou/datas/authentication.dart';
 import 'package:yapadsou/ui/typographie.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/widgets/button.dart';
@@ -16,6 +17,9 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  String textError = '';
+  late Map<String, dynamic> authenticationResult;
 
   @override
   void dispose() {
@@ -40,7 +44,9 @@ class _LoginState extends State<Login> {
           Text("Reviens vite pour profiter\ndes bons plans",
               textAlign: TextAlign.center,
               style: CustomTextStyles.normalText(color: CustomColors.black)),
-          const SizedBox(height: 50),
+          const SizedBox(height: 20),
+          Text(textError, style: CustomTextStyles.normalInterText(color: CustomColors.red)),
+          const SizedBox(height: 20),
           Material(
             child: Form(
               key: _formKey,
@@ -73,31 +79,32 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 10),
                     SimpleButton(
+                        width: 261,
+                        height: 56,
                         text: "SE CONNECTER",
-                        pressed: () => {
+                        pressed: () async => {
                               if (_formKey.currentState!.validate())
                                 {
-                                  /*showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Row(children: [
-                              Text(emailController.text),
-                              const Text(" - "),
-                              Text(passwordController.text),
-                            ]
-                            )
-                          );
-                        },
-                      ),*/
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const MainView()),
+                                  authenticationResult = await Authentication.authenticate(
+                                          emailController.text,
+                                          passwordController.text
                                   ),
+                                  if (authenticationResult.keys.contains("error"))
+                                    {
+                                      setState(() => textError = authenticationResult["error"])
+                                    }
+                                  else
+                                    {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const MainView()),
+                                      ),
+                                    }
                                 },
                             },
-                        color: CustomColors.blue),
+                        color: CustomColors.blue
+                    ),
                   ],
                 ),
               ),

@@ -1,11 +1,28 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:yapadsou/assets/colors/colors.dart';
 import 'package:yapadsou/views/homeview.dart';
 import 'package:yapadsou/views/addplan_desc.dart';
 import 'package:yapadsou/views/addplan_photo.dart';
 
-class MainView extends StatelessWidget {
+class MainView extends StatefulWidget {
   const MainView({super.key});
+
+  @override
+  State<MainView> createState() => _MainViewState();
+}
+
+class _MainViewState extends State<MainView> {
+  @override
+  void initState() {
+    super.initState();
+    getToken();
+  }
+
+  void getToken() async {
+    await FirebaseMessaging.instance.getToken();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
