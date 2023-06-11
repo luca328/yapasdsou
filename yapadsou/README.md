@@ -2,6 +2,16 @@
 
 Cette application est une application de gestion d'offres peu couteuse.
 
+## Outils utilisés
+
+[Flutter](https://flutter.dev)
+[Amplitude](https://amplitude.com)
+[Firebase](https://firebase.google.com)
+[GIT](https://git-scm.com)
+[Figma](https://www.figma.com)
+[Android](https://www.android.com/intl/fr_fr)
+
+
 ## Pour commencer
 
 Installez [Flutter](https://flutter.dev/docs/get-started/install)
